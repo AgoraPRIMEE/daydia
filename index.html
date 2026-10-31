@@ -192,28 +192,49 @@
 
         .greeting {
             position: absolute;
-            top: -20px;
-            right: -40px;
+            top: -30px;
+            right: -30px;
             text-align: center;
             font-family: 'Great Vibes', cursive;
             font-size: 1.8em;
             color: #333;
             font-weight: 400;
             background: #fff;
-            padding: 10px 25px;
-            border-radius: 20px;
+            padding: 12px 28px;
+            border-radius: 50%;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             white-space: nowrap;
             z-index: 10;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .greeting::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: 40px;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .greeting::after {
             content: '';
             position: absolute;
-            bottom: -12px;
-            left: 30px;
-            border: 12px solid transparent;
-            border-top-color: #fff;
+            bottom: -35px;
+            right: 60px;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .nav-buttons {
